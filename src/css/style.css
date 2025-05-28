@@ -1,0 +1,29 @@
+.btn-primery {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    background-color: #007bff;
+    /* Синій */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primery:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-primery:active {
+    background-color: #00408d;
+    transform: translateY(0);
+}
+
+.btn-primery:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none; }
