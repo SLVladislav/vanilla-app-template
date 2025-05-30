@@ -27,3 +27,45 @@
     background-color: #cccccc;
     cursor: not-allowed;
     box-shadow: none; }
+
+
+                .form {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 12px;
+                    margin: 20px auto;
+                    padding: 10px;
+                    max-width: 600px;
+                    background-color: #f5f5f5;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                }
+        
+                .form input[type="text"] {
+                    padding: 10px 16px;
+                    font-size: 16px;
+                    border: 2px solid #ccc;
+                    border-radius: 8px;
+                    flex-grow: 1;
+                    transition: border-color 0.3s;
+                }
+        
+                .form input[type="text"]:focus {
+                    border-color: #007bff;
+                    outline: none;
+                }
+        
+                .form button {
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                }
+        
+                .form button:hover {
+                    background-color: #0056b3;         }        

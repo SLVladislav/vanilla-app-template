@@ -1,38 +1,3 @@
-// import axios from "axios";
-
-// const API_KEY = "33675030-cc14eed331d6d92ff5641cad6";
-// const URL_API = "https://pixabay.com/api/";
-
-// export function getImagesByQuery(query) {
-//   return  axios.get(`${URL_API}`, {
-//         params: {
-//             key: API_KEY,
-//             q: query,
-//             image_type: 'photo',
-//             orientation: 'horizontal',
-//             safesearch: true,
-//         }
-//     }).then(response => {
-//        return response.data;
-//     })
-// };
-
-        
-       
-
-
-
-  
-//  function fetchpokemon(pokemonId) {
-//     return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`).then(response => {
-//         if (!response.ok) {
-//             throw new Error(response.status);
-//           }
-//         return response.json()
-//     });
-// };
-// export default { fetchpokemon };
-
 export default class NewsApiService{
     constructor() {
         this.searchQuery = "";
@@ -47,10 +12,13 @@ export default class NewsApiService{
         };
         const url = `https://newsapi.org/v2/everything?q=${this.searchQuery}&pageSize=10&page=${this.page}`;
         
-        fetch(url, options)
+       return fetch(url, options)
             .then(response => response.json())
             .then(data => {
+                console.log(data);
+                
                 this.incrementPage();
+                return data.articles;
                 
             });
             

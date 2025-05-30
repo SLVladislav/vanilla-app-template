@@ -1,33 +1,39 @@
-// const lightbox = new SimpleLightbox(".gallery a", {
-//   captionsData: 'alt',
-//   captionDelay: 250,
-//   loop: true,
-//   animationSpeed: 300,
-//   enableKeyboard: true
-// });
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+const refs = {
+    cardConteiner: document.querySelector(".js-card-container"),
+}
 
 
-// function renderPokemon({ name, sprites, weight, height, abilities }) {
-    //     const abilitied = abilities.map(ability => `<li class="list-group-item">${ability.ability.name}</li>` ).join('');
+
+ function appenedArticlesMarkup(articles) {
+    const marcupList = articles.map(({ url, urlToImage, title, author, description }) =>
+        `
+        <li>
+        <a href="${urlToImage}" target="_blank" rel="noopener noreferrer">
+        <article>
+        <img src="${urlToImage}" alt="" width="480">
+        <h2>"${title}"</h2>
+        <p>Posted by: "${author}"</p>
+        <p>"${description}"</p>  
+        </article>
+        </li>
+       `).join("");
+
+
+     refs.cardConteiner.insertAdjacentHTML("beforeend", marcupList);
     
-    //     const markapPokemon =
-    //         ` <div class="card">
-    //     <div class="card-img-top">
-    //         <img src="${sprites.front_default}" alt="${name}">
-    //     </div>
-    //     <div class="card-body">
-    //         <h2 class="card-title">Имя: ${name}</h2>
-    //         <p class="card-text">Вага: ${weight}</p>
-    //         <p class="card-text">Рост: ${height}</p>
+     new SimpleLightbox(".js-card-container a", {
+        captionsData: 'alt',
+        captionDelay: 250,
+        loop: true,
+        animationSpeed: 300,
+        enableKeyboard: true
+    });    
     
-    //         <p class="card-text"><b>Умения</b></p>
-    //         <ul class="list-group">
-    //           ${abilitied}
-    //         </ul>
-    //     </div>
-    // </div> ` ;
-        
-    //     refs.cardConteiner.innerHTML = markapPokemon;
-        
-// }
-    
+}
+
+ function clearArticlesContainer() {
+    refs.cardConteiner.innerHTML = "";
+}
+export { appenedArticlesMarkup, clearArticlesContainer };
