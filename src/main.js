@@ -1,7 +1,6 @@
 import NewsApiService from "./js/pixabay-api";
 import {appenedArticlesMarkup, clearArticlesContainer} from "./js/render-functions";
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
+
 
 const newsApiService = new NewsApiService();
 
